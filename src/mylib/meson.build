@@ -17,10 +17,11 @@ libmylib_src = files([
 
 libmylib = shared_library(
     'mylib',
-    [],
+    libmylib_src,
+    c_args: ['-DMYLIB_BUILD'],
     include_directories: libmylib_inc,
     install: true
-    )
+)
 
 libmylib_dep = declare_dependency(
     include_directories: libmylib_inc,
