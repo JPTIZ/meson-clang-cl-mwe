@@ -13,9 +13,7 @@ libmylib_src = files([
     'mylib.c',
 ])
 
-# library('mylib', libmylib_src, version: '0.1')
-
-libmylib = shared_library(
+libmylib = library(
     'mylib',
     libmylib_src,
     c_args: ['-DMYLIB_BUILD'],
